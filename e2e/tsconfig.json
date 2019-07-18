@@ -69,5 +69,6 @@
     "./Conf/**/*.ts",
     "./Web/**/*.ts",
     "./Shared/**/*.ts"
-  ]
+  ],
+  "compileOnSave": false
 }
