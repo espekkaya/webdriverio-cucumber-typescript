@@ -1,4 +1,4 @@
-const config: WebdriverIOAsync.Config = {
+const config: WebdriverIO.Config = {
     //
     // ====================
     // Runner Configuration
@@ -118,6 +118,7 @@ const config: WebdriverIOAsync.Config = {
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
     framework: 'cucumber',
+
     //
     // The number of times to retry the entire specfile when it fails as a whole
     // specFileRetries: 1,
@@ -129,9 +130,9 @@ const config: WebdriverIOAsync.Config = {
         'spec',
         ['allure', {
             outputDir: 'Allure/allure-result',
-            disableWebdriverStepsReporting: true,
-            disableWebdriverScreenshotsReporting: false,
-            useCucumberStepReporter: true
+            disableWebdriverStepsReporting: true, // this is needed for cucumber reporter to work correctly
+            disableWebdriverScreenshotsReporting: false, // needed for browser.saveScreenshot() in hooks
+            useCucumberStepReporter: true, // this does literally nothing right n
         }]
     ],
     //
@@ -142,7 +143,9 @@ const config: WebdriverIOAsync.Config = {
         backtrace: true,   // <boolean> show full backtrace for errors
         requireModule: [
             'tsconfig-paths/register',
-            () => { require('ts-node').register({ files: true }) },
+            () => {
+                require('ts-node').register({ files: true })
+            },
         ],  // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
         dryRun: false,      // <boolean> invoke formatters without executing steps
         failFast: false,    // <boolean> abort the run on first failure

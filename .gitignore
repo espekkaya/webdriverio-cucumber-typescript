@@ -1,13 +1,10 @@
-
 ### Logs ###
-e2e/Log/*
-!e2e/Log/README.md
+e2e/Logs/*
+!e2e/Logs/README.md
 
-### Report ###
-e2e/Web/Report/*
-!e2e/Web/Report/README.md
-!e2e/Web/Report/Allure/allure-result/README.md
-!e2e/Web/Report/Screenshots/README.md
+### Allure Report ###
+e2e/Allure/*
+!e2e/Allure/README.md
 
 # Created by https://www.gitignore.io/api/node,webstorm+all
 # Edit at https://www.gitignore.io/?templates=node,webstorm+all
