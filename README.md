@@ -2,6 +2,8 @@
 
 This is a boilerplate project which uses WebdriverIO v5, Cucumber and TypeScript v3. 
 
+Here is an small page object example in that project.
+
 We also use below libraries;
 
 	1. Allure Report
