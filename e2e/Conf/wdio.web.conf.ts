@@ -40,4 +40,4 @@ config.services = [
     'selenium-standalone'
 ];
 
-export { config }
+export { config };

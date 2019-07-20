@@ -129,7 +129,7 @@ const config: WebdriverIO.Config = {
     reporters: [
         'spec',
         ['allure', {
-            outputDir: 'Allure/allure-result',
+            outputDir: 'Report/allure-result',
             disableWebdriverStepsReporting: true, // this is needed for cucumber reporter to work correctly
             disableWebdriverScreenshotsReporting: false, // needed for browser.saveScreenshot() in hooks
             useCucumberStepReporter: true, // this does literally nothing right n
@@ -143,8 +143,8 @@ const config: WebdriverIO.Config = {
         backtrace: true,   // <boolean> show full backtrace for errors
         requireModule: [
             'tsconfig-paths/register',
-            () => {
-                require('ts-node').register({ files: true })
+            (): void => {
+                require('ts-node').register({ files: true });
             },
         ],  // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
         dryRun: false,      // <boolean> invoke formatters without executing steps
@@ -155,7 +155,7 @@ const config: WebdriverIO.Config = {
         source: true,       // <boolean> hide source uris
         profile: [],        // <string[]> (name) specify the profile to use
         strict: true,      // <boolean> fail if there are any undefined or pending steps
-        tags: ['not @Pending'],           // <string[]> (expression) only execute the features or scenarios with tags matching the expression
+        tagExpression: 'not @Pending',           // <string[]> (expression) only execute the features or scenarios with tags matching the expression
         timeout: 90000,     // <number> timeout for step definitions
         ignoreUndefinedDefinitions: false, // <boolean> Enable this config to treat undefined definitions as warnings.
     },
@@ -190,7 +190,7 @@ const config: WebdriverIO.Config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
-    before: function (capabilities: WebDriver.DesiredCapabilities, specs: string[]) {
+    before: function (capabilities: WebDriver.DesiredCapabilities, specs: string[]): void {
         require('ts-node').register({ files: true });
     },
     /**
@@ -282,4 +282,4 @@ const config: WebdriverIO.Config = {
     //}
 };
 
-export { config }
+export { config };
