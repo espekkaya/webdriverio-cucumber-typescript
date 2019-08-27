@@ -3,6 +3,9 @@ const config: any = require('./wdio.shared.conf.ts').config;
 config.suites = {
     Google: [
         'Web/Features/Google/Google.feature'
+    ],
+    Google1: [
+        'Web/Features/Google1/Google.feature'
     ]
 };
 
