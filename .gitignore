@@ -3,7 +3,7 @@ e2e/Logs/*
 !e2e/Logs/README.md
 
 ### Allure Report ###
-allure-report/*
+e2e/allure-report/*
 e2e/Report/*
 !e2e/Report/README.md
 
