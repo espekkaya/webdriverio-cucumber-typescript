@@ -1,6 +1,6 @@
 export default class WorldPageObject {
 
-    public static async open(path: string): Promise<void> {
-        return await browser.url(path);
+    public static open(path: string): void {
+        browser.url(path);
     }
 }
